@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page - Urban Solar Energy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Styles for Module 1 */
+        .module-1 {
+            background-image: url('https://i.postimg.cc/DzwD8tFq/toit-3.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .module-1 .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            color: white;
+        }
+        .text-section h1 {
+            font-size: 42px;
+        }
+        .text-section h2 {
+            font-size: 36px;
+        }
+        .text-section p {
+            font-size: 28px;
+        }
+        .form-section {
+            width: 35%;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .form-section h3 {
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: white;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        input[type="submit"] {
+            background-color: #f7931e;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #e67300;
+        }
+        .form-section p {
+            font-size: 14px;
+            color: white;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Styles for Module 2 */
+        .module-2 {
+            padding: 50px;
+            background-color: #f5f5f5;
+        }
+        .module-2 .container {
+            max-width: 1200px;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 0 auto;
+        }
+        .module-2 .title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .module-2 .title::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background-color: #f7931e;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .benefit {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .benefit img {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
+        .benefit div {
+            flex-grow: 1;
+        }
+        .benefit h3 {
+            margin: 0;
+            font-size: 22px;
+            color: #333;
+        }
+        .benefit p {
+            margin: 5px 0 0;
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Styles for Module 3 */
+        .module-3 {
+            padding: 50px;
+            background-color: #fff;
+        }
+        .module-3 .container {
+            max-width: 1200px;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 0 auto;
+        }
+        .module-3 .title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .module-3 .title::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background-color: #f7931e;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            padding-left: 40px;
+        }
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            width: 5px;
+            height: 100%;
+            background-color: #f7931e;
+        }
+        .step {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .step img {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
+        .step div {
+            flex-grow: 1;
+        }
+        .step h3 {
+            margin: 0;
+            font-size: 22px;
+            color: #333;
+        }
+        .step p {
+            margin: 5px 0 0;
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Media Queries for mobile optimization */
+        @media screen and (max-width: 768px) {
+            .module-1 .container {
+                flex-direction: column;
+            }
+            .text-section h1 {
+                font-size: 32px;
+            }
+            .text-section h2 {
+                font-size: 28px;
+            }
+            .text-section p {
+                font-size: 24px;
+            }
+            .form-section {
+                width: 90%;
+                margin-top: 20px;
+            }
+            .benefit img {
+                width: 40px;
+                height: 40px;
+            }
+            .benefit h3 {
+                font-size: 18px;
+            }
+            .benefit p {
+                font-size: 14px;
+            }
+            .step img {
+                width: 40px;
+                height: 40px;
+            }
+            .step h3 {
+                font-size: 18px;
+            }
+            .step p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Module 1 -->
+    <div class="module-1">
+        <div class="container">
+            <div class="text-section">
+                <h1>Économisez jusqu'à 80% sur vos factures d'électricité !</h1>
+                <h2>Votre installation autofinancée à 100%</h2>
+                <p>Avec <img src="https://i.postimg.cc/Hs9JV2qd/logo-urban-solar-energy.webp" alt="Urban Solar Energy Logo" style="width: 100px; vertical-align: middle; margin-right: 10px;">
+                profitez de votre installation 24H/24. <br> Profitez de votre production à 100%.</p>
+                <p>Agissez maintenant. Demandez votre étude gratuite via le formulaire</p>
+                <p>Découvrez comment !</p>
+            </div>
+            <div class="form-section">
+                <h3>Demande d'information</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" name="prenom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="codepostal">Code postal *</label>
+                        <input type="text" id="codepostal" name="codepostal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ville">Ville *</label>
+                        <input type="text" id="ville" name="ville" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">Tél mobile *</label>
+                        <input type="tel" id="tel" name="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Votre email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Recevoir mon étude gratuite">
+                    </div>
+                    <p>Nous nous engageons à protéger vos coordonnées. Elles ne seront jamais partagées ou utilisées à des fins commerciales sans votre consentement.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Module 2 -->
+    <div class="module-2">
+        <div class="container">
+            <h2 class="title">Pourquoi choisir l'énergie solaire ?</h2>
+            <div class="benefits">
+                <div class="benefit">
+                    <img src="https://i.postimg.cc/cHYSzYr9/ecologie.webp" alt="Contribution écologique">
+                    <div>
+                        <h3>Contribution écologique</h3>
+                        <p>Réduisez votre empreinte carbone et préservez l'environnement.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <img src="https://i.postimg.cc/cCSSGH3s/soleil.webp" alt="Gains financiers">
+                    <div>
+                        <h3>Gains financiers</h3>
+                        <p>Profitez d'une baisse significative de vos factures d'électricité.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <img src="https://i.postimg.cc/xT92sXY5/electricite.webp" alt="Indépendance énergétique">
+                    <div>
+                        <h3>Indépendance énergétique</h3>
+                        <p>Devenez autonome en produisant votre propre électricité.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <img src="https://i.postimg.cc/Y0zwrHNQ/maison-valoris-e.webp" alt="Valorisation de votre bien">
+                    <div>
+                        <h3>Valorisation de votre bien</h3>
+                        <p>Augmentez la valeur de votre propriété grâce à une installation solaire.</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <img src="https://i.postimg.cc/wxXzcXK3/entretien.webp" alt="Longévité garantie">
+                    <div>
+                        <h3>Longévité garantie</h3>
+                        <p>Bénéficiez d'une installation durable avec une garantie de 25 ans.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Module 3 -->
+    <div class="module-3">
+        <div class="container">
+            <h2 class="title">Étapes de votre projet solaire</h2>
+            <div class="steps">
+                <div class="step">
+                    <img src="https://i.postimg.cc/65G9SymG/etude.webp" alt="Étude Personnalisée">
+                    <div>
+                        <h3>Étude personnalisée</h3>
+                        <p>Recevez une étude détaillée de la faisabilité de votre projet solaire.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <img src="https://i.postimg.cc/4NCdX6t1/icone-panneaux.webp" alt="Garantie 25 Ans">
+                    <div>
+                        <h3>Garantie 25 ans</h3>
+                        <p>Votre installation est protégée avec une garantie de 25 ans.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <img src="https://i.postimg.cc/Mp5K0gLs/poseur-icone.webp" alt="Installation Professionnelle">
+                    <div>
+                        <h3>Installation professionnelle</h3>
+                        <p>Nos experts installent votre équipement selon les normes les plus strictes.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <img src="https://i.postimg.cc/4d7fgyxM/icone-surveillance.webp" alt="Surveillance Facile de Votre Installation">
+                    <div>
+                        <h3>Surveillance facile de votre installation</h3>
+                        <p>Suivez la production de votre installation en temps réel via notre application.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <img src="https://i.postimg.cc/9fv3ypc8/icone-raccordement-enedis.webp" alt="Gestion des démarches administratives">
+                    <div>
+                        <h3>Gestion des démarches administratives</h3>
+                        <p>Nous prenons en charge toutes les démarches nécessaires pour le raccordement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
