@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page - Urban Solar Energy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        /* Styles for Module 1 */
-        .module-1 {
+        /* Styles existants des sections 1 à 7 */
+        /* Section 1: Haut de page avec le formulaire */
+        .section-1 {
             background-image: url('https://i.postimg.cc/DzwD8tFq/toit-3.png');
             background-size: cover;
             background-position: center;
@@ -21,7 +18,8 @@
             min-height: 100vh;
             padding: 20px;
         }
-        .module-1 .container {
+
+        .section-1 .container {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -29,21 +27,26 @@
             max-width: 1200px;
             color: white;
         }
+
         .text-section h1 {
             font-size: 42px;
         }
+
         .text-section h2 {
             font-size: 36px;
         }
+
         .text-section p {
             font-size: 28px;
         }
+
         .form-section {
             width: 35%;
             background-color: rgba(255, 255, 255, 0.2);
             padding: 20px;
             border-radius: 10px;
         }
+
         .form-section h3 {
             text-align: center;
             color: white;
@@ -52,22 +55,26 @@
             padding: 10px;
             border-radius: 5px;
         }
+
         .form-group {
             display: flex;
             flex-direction: column;
             margin-bottom: 15px;
         }
+
         label {
             font-weight: bold;
             margin-bottom: 5px;
             color: white;
         }
+
         input {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 1em;
         }
+
         input[type="submit"] {
             background-color: #f7931e;
             color: #fff;
@@ -78,9 +85,11 @@
             font-size: 18px;
             border-radius: 5px;
         }
+
         input[type="submit"]:hover {
             background-color: #e67300;
         }
+
         .form-section p {
             font-size: 14px;
             color: white;
@@ -88,12 +97,13 @@
             margin-top: 10px;
         }
 
-        /* Styles for Module 2 */
-        .module-2 {
+        /* Section 2: Pourquoi choisir l'énergie solaire ? */
+        .section-2 {
             padding: 50px;
             background-color: #f5f5f5;
         }
-        .module-2 .container {
+
+        .section-2 .container {
             max-width: 1200px;
             background-color: white;
             padding: 30px;
@@ -101,7 +111,8 @@
             border-radius: 10px;
             margin: 0 auto;
         }
-        .module-2 .title {
+
+        .section-2 .title {
             text-align: center;
             font-size: 28px;
             font-weight: bold;
@@ -109,7 +120,8 @@
             margin-bottom: 30px;
             position: relative;
         }
-        .module-2 .title::before {
+
+        .section-2 .title::before {
             content: '';
             position: absolute;
             width: 100px;
@@ -119,11 +131,13 @@
             left: 50%;
             transform: translateX(-50%);
         }
+
         .benefits {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
+
         .benefit {
             display: flex;
             align-items: center;
@@ -132,47 +146,57 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         .benefit img {
             width: 50px;
             height: 50px;
             margin-right: 20px;
         }
+
         .benefit div {
             flex-grow: 1;
         }
+
         .benefit h3 {
             margin: 0;
             font-size: 22px;
             color: #333;
         }
+
         .benefit p {
             margin: 5px 0 0;
             font-size: 16px;
             color: #666;
         }
 
-        /* Styles for Module 3 */
-        .module-3 {
-            padding: 50px;
-            background-color: #fff;
-        }
-        .module-3 .container {
-            max-width: 1200px;
-            background-color: white;
-            padding: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            margin: 0 auto;
-        }
-        .module-3 .title {
+        /* Section 3: Le Stockage Virtuel */
+        .section-stockage {
+            background-image: url('https://i.postimg.cc/8CQFJpy7/toit-us.webp');
+            background-size: cover;
+            background-position: center;
+            padding: 50px 0;
             text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 30px;
+            color: white;
+        }
+
+        .section-stockage .content-wrapper {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            width: 80%;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-stockage h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            color: #000;
+            margin-bottom: 10px;
             position: relative;
         }
-        .module-3 .title::before {
+
+        .section-stockage h2::after {
             content: '';
             position: absolute;
             width: 100px;
@@ -182,23 +206,148 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        .steps {
+
+        .section-stockage h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #62a786;
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+
+        .stockage-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 0 20px;
+        }
+
+        .stockage-item {
+            background-color: #62a786;
+            padding: 20px;
+            border-radius: 10px;
+            width: 22%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 260px;
+        }
+
+        .stockage-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        .stockage-item h4 {
+            font-size: 18px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .stockage-item p {
+            font-size: 16px;
+            color: white;
+            margin: 0;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* SECTION 4: Stockage Virtuel */
+        .section-stockage-virtuel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .header-banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #6b6b6b;
+            padding: 20px 40px;
+            width: 90%;
+            max-width: 1200px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .header-banner img {
+            height: 60px;
+            margin-right: 20px;
+        }
+
+        .header-banner h2 {
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .content-block {
+            background-color: #62a786;
+            color: white;
+            padding: 40px;
+            border-radius: 0 0 10px 10px;
+            width: 90%;
+            max-width: 1200px;
+            text-align: center;
+            margin-top: -20px;
+        }
+
+        .content-block h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .content-block p {
+            font-size: 28px;
+            line-height: 1.5;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Section 5: Étapes de votre projet solaire */
+        .section-5 {
+            padding: 50px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .section-5 .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-5 .title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .section-5 .title::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background-color: #f7931e;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .steps-grid {
             display: flex;
             flex-direction: column;
             gap: 20px;
-            position: relative;
-            padding-left: 40px;
         }
-        .steps::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 20px;
-            width: 5px;
-            height: 100%;
-            background-color: #f7931e;
-        }
-        .step {
+
+        .step-item {
             display: flex;
             align-items: center;
             background-color: #fff;
@@ -206,61 +355,248 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .step img {
+
+        .step-item img {
             width: 50px;
             height: 50px;
             margin-right: 20px;
         }
-        .step div {
+
+        .step-item div {
             flex-grow: 1;
+            text-align: left;
         }
-        .step h3 {
+
+        .step-item h3 {
             margin: 0;
             font-size: 22px;
             color: #333;
         }
-        .step p {
+
+        .step-item p {
             margin: 5px 0 0;
             font-size: 16px;
             color: #666;
         }
 
-        /* Media Queries for mobile optimization */
-        @media screen and (max-width: 768px) {
-            .module-1 .container {
+        /* Responsive design for mobile */
+        @media (max-width: 768px) {
+            .section-1 .container,
+            .section-2 .container,
+            .stockage-grid,
+            .steps-grid {
                 flex-direction: column;
+                align-items: center;
             }
-            .text-section h1 {
-                font-size: 32px;
-            }
-            .text-section h2 {
-                font-size: 28px;
-            }
-            .text-section p {
-                font-size: 24px;
-            }
+
             .form-section {
                 width: 90%;
-                margin-top: 20px;
             }
-            .benefit img {
+
+            .stockage-item,
+            .step-item {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+
+            .header-banner, .content-block {
+                width: 90%;
+            }
+
+            .header-banner img {
+                height: 50px;
+            }
+
+            .header-banner h2 {
+                font-size: 28px;
+            }
+
+            .step-item img {
                 width: 40px;
                 height: 40px;
             }
-            .benefit h3 {
+
+            .step-item h3, .step-item p {
                 font-size: 18px;
             }
-            .benefit p {
-                font-size: 14px;
+        }
+
+        /* Section 6: Exemples de réalisations */
+        .section-6 {
+            padding: 50px;
+            background-color: #f5f5f5;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .container-6 {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .content-wrapper-6 {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(100% - 20px);
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .title-6 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+
+        .title-6::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background-color: #f7931e;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .gallery-grid-6 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .gallery-item-6 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .before-after-6 {
+            width: 48%;
+        }
+
+        .before-after-6 h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+
+        .before-after-6 img {
+            width: 100%;
+            border: 3px solid #62a786;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item-6 {
+                flex-direction: column;
             }
-            .step img {
-                width: 40px;
-                height: 40px;
+
+            .before-after-6 {
+                width: 100%;
             }
-            .step h3 {
+
+            .content-wrapper-6 {
+                padding: 20px;
+                margin: 0 10px;
+                width: calc(100% - 20px);
+            }
+        }
+
+        /* Section 7: Avis de clients */
+        .section-7 {
+            padding: 50px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .section-7 .title-7 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .section-7 .title-7::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background-color: #f7931e;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .reviews-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .review-card h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .review-card .stars {
+            color: #f7931e;
+            margin-bottom: 10px;
+        }
+
+        .review-card p {
+            font-size: 16px;
+            color: #666;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Responsive design pour section 7 */
+        @media (max-width: 768px) {
+            .review-card {
+                padding: 15px;
+            }
+
+            .review-card h3 {
                 font-size: 18px;
             }
-            .step p {
+
+            .review-card p {
                 font-size: 14px;
             }
         }
@@ -268,55 +604,185 @@
 </head>
 <body>
 
-    <!-- Module 1 -->
-    <div class="module-1">
-        <div class="container">
-            <div class="text-section">
-                <h1>Économisez jusqu'à 80% sur vos factures d'électricité !</h1>
-                <h2>Votre installation autofinancée à 100%</h2>
-                <p>Avec <img src="https://i.postimg.cc/Hs9JV2qd/logo-urban-solar-energy.webp" alt="Urban Solar Energy Logo" style="width: 100px; vertical-align: middle; margin-right: 10px;">
-                profitez de votre installation 24H/24. <br> Profitez de votre production à 100%.</p>
-                <p>Agissez maintenant. Demandez votre étude gratuite via le formulaire</p>
-                <p>Découvrez comment !</p>
-            </div>
-            <div class="form-section">
-                <h3>Demande d'information</h3>
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="nom">Nom *</label>
-                        <input type="text" id="nom" name="nom" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="prenom">Prénom *</label>
-                        <input type="text" id="prenom" name="prenom" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="codepostal">Code postal *</label>
-                        <input type="text" id="codepostal" name="codepostal" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="ville">Ville *</label>
-                        <input type="text" id="ville" name="ville" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="tel">Tél mobile *</label>
-                        <input type="tel" id="tel" name="tel" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Votre email *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Recevoir mon étude gratuite">
-                    </div>
-                    <p>Nous nous engageons à protéger vos coordonnées. Elles ne seront jamais partagées ou utilisées à des fins commerciales sans votre consentement.</p>
-                </form>
-            </div>
-        </div>
-    </div>
+    <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page - Urban Solar Energy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    <!-- Module 2 -->
-    <div class="module-2">
+        /* Section 1 Styles */
+        .section-header {
+            background-image: url('https://i.postimg.cc/DzwD8tFq/toit-3.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            color: white;
+        }
+
+        /* Styles spécifiques pour la section du texte */
+        .section-header .text-section {
+            max-width: 50%;
+        }
+
+        .section-header .text-section h1 {
+            font-size: 42px;
+        }
+
+        .section-header .text-section h2 {
+            font-size: 36px;
+        }
+
+        .section-header .text-section p {
+            font-size: 28px;
+        }
+
+        /* Styles spécifiques pour la section du formulaire */
+        .section-header .form-section {
+            width: 25%; /* Taille ajustée du formulaire */
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin-right: 40px;
+        }
+
+        .section-header .form-section h3 {
+            text-align: center;
+            font-size: 24px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        input[type="submit"] {
+            background-color: #f7931e;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #e67300;
+        }
+
+        .form-section p {
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+            color: white;
+        }
+
+        /* Media queries pour la section 1 (si nécessaire) */
+        @media (max-width: 768px) {
+            .section-header {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .section-header .text-section {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .section-header .form-section {
+                width: 90%; /* Ajuste le formulaire pour qu'il prenne plus de place sur mobile */
+                margin-right: 0;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Section 1: Header -->
+    <section class="section-header">
+        <div class="text-section">
+            <!-- Ajout du logo ici -->
+            <img src="https://i.postimg.cc/SR9b821t/LOGO-SOLAIRE-ENERGIE-DIRECT.png" alt="Logo Solaire Énergie Direct" style="width: 300px; margin-bottom: 20px;">
+            
+            <h1>Économisez jusqu'à 80% sur vos factures d'électricité !</h1>
+            <h2>Votre installation autofinancée à 100%</h2>
+            <p>Avec <img src="https://i.postimg.cc/Hs9JV2qd/logo-urban-solar-energy.webp" alt="Urban Solar Energy Logo" style="width: 100px; vertical-align: middle; margin-right: 10px;">
+            profitez de votre installation 24H/24. <br> Profitez de votre production à 100%.</p>
+            <p>Agissez maintenant. Demandez votre étude gratuite via le formulaire</p>
+            <p>Découvrez comment !</p>
+        </div>
+
+        <div class="form-section">
+            <h3>Demande d'information</h3>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="nom">Nom *</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prénom *</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </div>
+                <div class="form-group">
+                    <label for="codepostal">Code postal *</label>
+                    <input type="text" id="codepostal" name="codepostal" required>
+                </div>
+                <div class="form-group">
+                    <label for="ville">Ville *</label>
+                    <input type="text" id="ville" name="ville" required>
+                </div>
+                <div class="form-group">
+                    <label for="tel">Tél mobile *</label>
+                    <input type="tel" id="tel" name="tel" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Votre email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Recevoir mon étude gratuite">
+                </div>
+                <p>Nous nous engageons à protéger vos coordonnées. Elles ne seront jamais partagées ou utilisées à des fins commerciales sans votre consentement.</p>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
+
+
+<!-- Section 2: Pourquoi choisir l'énergie solaire ? -->
+    <section class="section-2">
         <div class="container">
             <h2 class="title">Pourquoi choisir l'énergie solaire ?</h2>
             <div class="benefits">
@@ -357,42 +823,95 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Module 3 -->
-    <div class="module-3">
+    <!-- Section 3: Le Stockage Virtuel -->
+    <section class="section-stockage">
+        <div class="content-wrapper">
+            <h2>LE STOCKAGE VIRTUEL</h2>
+            <h3>Profitez de votre production à 100%</h3>
+            <div class="stockage-grid">
+                <div class="stockage-item">
+                    <img src="https://i.postimg.cc/5yswTYhF/PICTO-NO-MONEY-W-1.png" alt="Sans Investissement">
+                    <h4>SANS INVESTISSEMENT</h4>
+                    <p>Vous n'investissez rien de plus. Abonnez-vous pour 1€/mois/kWc.</p>
+                </div>
+
+                <div class="stockage-item">
+                    <img src="https://i.postimg.cc/rsV1fCPk/PICTO-TIME-W-1.png" alt="Illimité dans le Temps">
+                    <h4>ILLIMITÉ DANS LE TEMPS</h4>
+                    <p>Vous pouvez stocker l'été et consommer l'hiver.</p>
+                </div>
+
+                <div class="stockage-item">
+                    <img src="https://i.postimg.cc/xj5ychXT/PICTO-ILLIMITE-W-1.png" alt="Illimité en Volume">
+                    <h4>ILLIMITÉ EN VOLUME</h4>
+                    <p>Stockez tout ce que vous ne consommez pas. C'est pareil pour nous et illimité pour vous !</p>
+                </div>
+
+                <div class="stockage-item">
+                    <img src="https://i.postimg.cc/tTtddmDk/PICTO-LOCK-W-1.png" alt="Restez Libre">
+                    <h4>RESTEZ LIBRE</h4>
+                    <p>Sans engagement, vous restez maître de la situation !</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Stockage Virtuel avec Urban Solar -->
+    <section class="section-stockage-virtuel">
+        <div class="header-banner">
+            <img src="https://i.postimg.cc/Hs9JV2qd/logo-urban-solar-energy.webp" alt="Urban Solar Logo">
+            <h2>LE STOCKAGE VIRTUEL</h2>
+        </div>
+
+        <div class="content-block">
+            <h3>COMMENT ÇA MARCHE ?</h3>
+            <p>
+                Lorsque votre centrale produit, nous sommes capables de comptabiliser entièrement votre surplus d'électricité non autoconsommé. Vous pouvez ensuite le réutiliser automatiquement, lorsque votre centrale ne produit plus, c’est-à-dire la nuit ou pendant les jours de faible ensoleillement. Notre innovation simplifie la gestion de votre surplus, sans équipement supplémentaire. Le décompte est automatique, tout comme le réacheminement de votre électricité. Tout passe par votre compteur Linky.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 5: Étapes de votre projet solaire -->
+    <section class="section-5">
         <div class="container">
-            <h2 class="title">Étapes de votre projet solaire</h2>
-            <div class="steps">
-                <div class="step">
-                    <img src="https://i.postimg.cc/65G9SymG/etude.webp" alt="Étude Personnalisée">
+            <h2 class="title">ÉTAPES DE VOTRE PROJET SOLAIRE</h2>
+            <div class="steps-grid">
+                <!-- Étape 1 -->
+                <div class="step-item">
+                    <img src="https://i.postimg.cc/65G9SymG/etude.webp" alt="Étude personnalisée">
                     <div>
                         <h3>Étude personnalisée</h3>
                         <p>Recevez une étude détaillée de la faisabilité de votre projet solaire.</p>
                     </div>
                 </div>
-                <div class="step">
-                    <img src="https://i.postimg.cc/4NCdX6t1/icone-panneaux.webp" alt="Garantie 25 Ans">
+                <!-- Étape 2 -->
+                <div class="step-item">
+                    <img src="https://i.postimg.cc/4NCdX6t1/icone-panneaux.webp" alt="Garantie 25 ans">
                     <div>
                         <h3>Garantie 25 ans</h3>
                         <p>Votre installation est protégée avec une garantie de 25 ans.</p>
                     </div>
                 </div>
-                <div class="step">
-                    <img src="https://i.postimg.cc/Mp5K0gLs/poseur-icone.webp" alt="Installation Professionnelle">
+                <!-- Étape 3 -->
+                <div class="step-item">
+                    <img src="https://i.postimg.cc/Mp5K0gLs/poseur-icone.webp" alt="Installation professionnelle">
                     <div>
                         <h3>Installation professionnelle</h3>
                         <p>Nos experts installent votre équipement selon les normes les plus strictes.</p>
                     </div>
                 </div>
-                <div class="step">
-                    <img src="https://i.postimg.cc/4d7fgyxM/icone-surveillance.webp" alt="Surveillance Facile de Votre Installation">
+                <!-- Étape 4 -->
+                <div class="step-item">
+                    <img src="https://i.postimg.cc/4d7fgyxM/icone-surveillance.webp" alt="Surveillance facile de votre installation">
                     <div>
                         <h3>Surveillance facile de votre installation</h3>
                         <p>Suivez la production de votre installation en temps réel via notre application.</p>
                     </div>
                 </div>
-                <div class="step">
+                <!-- Étape 5 -->
+                <div class="step-item">
                     <img src="https://i.postimg.cc/9fv3ypc8/icone-raccordement-enedis.webp" alt="Gestion des démarches administratives">
                     <div>
                         <h3>Gestion des démarches administratives</h3>
@@ -401,7 +920,380 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Section 6: Exemples de réalisations -->
+    <section class="section-6">
+        <div class="container-6">
+            <div class="content-wrapper-6">
+                <h2 class="title-6">Exemples de réalisations</h2>
+                <div class="gallery-grid-6">
+                    <!-- Réalisation 1 -->
+                    <div class="gallery-item-6">
+                        <div class="before-after-6">
+                            <h3>Avant</h3>
+                            <img src="https://i.postimg.cc/xqr9tZ21/AVANT-1.webp" alt="Avant - Réalisation 1">
+                        </div>
+                        <div class="before-after-6">
+                            <h3>Après</h3>
+                            <img src="https://i.postimg.cc/GtTcPC6f/APRES-1.webp" alt="Après - Réalisation 1">
+                        </div>
+                    </div>
+
+                    <!-- Réalisation 2 -->
+                    <div class="gallery-item-6">
+                        <div class="before-after-6">
+                            <h3>Avant</h3>
+                            <img src="https://i.postimg.cc/hPj24GVg/AVANT-BIS-4.webp" alt="Avant - Réalisation 2">
+                        </div>
+                        <div class="before-after-6">
+                            <h3>Après</h3>
+                            <img src="https://i.postimg.cc/bJBy2JVb/APRES-2.webp" alt="Après - Réalisation 2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Avis de clients -->
+    <section class="section-7">
+        <h2 class="title-7">Avis de Clients</h2>
+        <div class="reviews-container">
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <h3>Jean D.</h3>
+                <p>"Très satisfait du service. L'installation a été rapide et je vois déjà une baisse sur mes factures d'électricité."</p>
+            </div>
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐</div>
+                <h3>Marie B.</h3>
+                <p>"J'étais un peu sceptique au départ, mais je suis agréablement surpris par la qualité de l'installation et le suivi."</p>
+            </div>
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <h3>Pierre L.</h3>
+                <p>"L'équipe a été très professionnelle du début à la fin. Je recommande sans hésitation !"</p>
+            </div>
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐</div>
+                <h3>Lucie M.</h3>
+                <p>"Excellent travail ! Les délais ont été respectés et l'équipe a su répondre à toutes mes questions."</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Section 8 avec Modales Optimisée</title>
+    <style>
+        /* Section 8 Styles */
+        .section-8 {
+            background-color: #4a8862;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .section-8 .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-8 .title {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .section-8 .description {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .section-8 .cta-button {
+            background-color: white;
+            color: #4a8862;
+            padding: 15px 30px;
+            font-size: 28px; /* Ajusté pour desktop */
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: background-color 0.3s, color 0.3s;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .section-8 .cta-button .no-commitment {
+            font-size: 20px;
+            font-weight: normal;
+            color: #4a8862;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .contact-info {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: underline;
+            transition: color 0.3s;
+            font-size: 16px;
+        }
+
+        .footer-link:hover {
+            color: #f7931e;
+        }
+
+        /* Styles des modales */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 5px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-title {
+            font-size: 22px; /* Taille par défaut */
+        }
+
+        .modal-text {
+            font-size: 16px; /* Taille par défaut */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Mobile Specific Adjustments */
+        @media (max-width: 768px) {
+            .section-8 {
+                padding: 20px 10px;
+            }
+
+            .section-8 .title {
+                font-size: 28px;
+            }
+
+            .section-8 .description {
+                font-size: 20px;
+            }
+
+            .section-8 .cta-button {
+                font-size: 32px; /* Plus grand pour mobile */
+                padding: 20px 40px; /* Plus grand pour améliorer la visibilité */
+            }
+
+            .contact-info {
+                font-size: 18px;
+                display: block;
+                line-height: 1.4;
+            }
+
+            .contact-info .phone-number {
+                display: block; /* Forcer le numéro de téléphone sur une nouvelle ligne */
+            }
+
+            .footer-link {
+                font-size: 16px;
+            }
+
+            /* Adjusted modal title and text size for mobile */
+            #modalMentions .modal-title,
+            #modalCGU .modal-title {
+                font-size: 12px !important; /* Taille réduite pour mobile */
+            }
+
+            #modalMentions .modal-text,
+            #modalCGU .modal-text {
+                font-size: 10px !important; /* Taille réduite pour mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="section-8">
+        <div class="container">
+            <h2 class="title">Passez à l'action dès aujourd'hui !</h2>
+            <p class="description">Découvrez comment économiser dès maintenant sur vos factures d’électricité grâce à une installation solaire autofinancée. Bénéficiez de notre expertise et demandez votre étude gratuite.</p>
+
+            <div class="cta-buttons">
+                <a href="#contactForm" class="cta-button">Recevoir mon étude gratuite<br><span class="no-commitment">(Sans engagement)</span></a>
+                <p class="contact-info">Ou appelez votre conseiller au<br><span class="phone-number"><strong>06 48 89 34 80</strong></span></p>
+            </div>
+
+            <p class="footer-links">
+                <a href="javascript:void(0)" class="footer-link" id="openMentions">Mentions légales</a> |
+                <a href="javascript:void(0)" class="footer-link" id="openCGU">Conditions générales d'utilisation</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Fenêtre modale pour les Mentions légales -->
+    <div id="modalMentions" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeMentions">&times;</span>
+            <h1 class="modal-title">Mentions légales</h1>
+            <p class="modal-text"><strong>Éditeur du site :</strong></p>
+            <p class="modal-text">Nom de la société ou du responsable : Urban Solar Energy (nom provisoire)<br>
+            Adresse : 4 rue du pont Saint Jean, 27530 Ézy-sur-Eure<br>
+            Numéro de téléphone : 06 48 89 34 80<br>
+            Adresse e-mail : contact@urbansolarenergy.fr</p>
+
+            <p class="modal-text"><strong>Directeur de publication :</strong></p>
+            <p class="modal-text">Nom : Sylvain Matignon</p>
+
+            <p class="modal-text"><strong>Hébergeur du site :</strong></p>
+            <p class="modal-text">Nom de l’hébergeur : [Nom de l’hébergeur]<br>
+            Adresse de l’hébergeur : [Adresse de l’hébergeur]<br>
+            Numéro de téléphone de l’hébergeur : [Numéro de téléphone de l’hébergeur]</p>
+
+            <p class="modal-text"><strong>Propriété intellectuelle :</strong></p>
+            <p class="modal-text">Tous les contenus présents sur ce site (textes, images, logos, vidéos, etc.) sont la propriété exclusive de Urban Solar Energy, sauf mention contraire. Toute reproduction ou représentation totale ou partielle de ce site sans autorisation expresse est interdite.</p>
+
+            <p class="modal-text"><strong>Responsabilité :</strong></p>
+            <p class="modal-text">Urban Solar Energy s'efforce de fournir des informations précises et à jour, mais ne garantit pas l'exactitude, l'exhaustivité ou l'actualité des informations disponibles sur le site. L'utilisateur est responsable de l'utilisation qu'il fait des informations fournies sur le site.</p>
+
+            <p class="modal-text"><strong>Collecte des données personnelles :</strong></p>
+            <p class="modal-text">Conformément à la réglementation en vigueur, notamment le RGPD, les utilisateurs disposent d’un droit d’accès, de rectification et de suppression de leurs données personnelles. Pour toute demande, veuillez nous contacter à l'adresse suivante : contact@urbansolarenergy.fr</p>
+        </div>
     </div>
+
+    <!-- Fenêtre modale pour les CGU -->
+    <div id="modalCGU" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeCGU">&times;</span>
+            <h1 class="modal-title">Conditions générales d'utilisation (CGU)</h1>
+            <h2 class="modal-text">1. Objet</h2>
+            <p class="modal-text">Les présentes Conditions Générales d'Utilisation ont pour objet de définir les modalités et conditions dans lesquelles les utilisateurs peuvent accéder au site Urban Solar Energy (nom provisoire) et l’utiliser.</p>
+            <h2 class="modal-text">2. Acceptation des CGU</h2>
+            <p class="modal-text">L’accès et l’utilisation du site Urban Solar Energy impliquent l’acceptation pleine et entière des présentes CGU.</p>
+            <h2 class="modal-text">3. Accès au site</h2>
+            <p class="modal-text">Le site est accessible gratuitement à tout utilisateur disposant d’un accès à internet. Urban Solar Energy met tout en œuvre pour assurer un accès de qualité au site, mais ne saurait être tenu pour responsable en cas de dysfonctionnement ou d’interruption.</p>
+            <h2 class="modal-text">4. Utilisation du site</h2>
+            <p class="modal-text">L'utilisateur s'engage à utiliser le site dans le respect des lois et règlements en vigueur. Toute utilisation contraire aux présentes CGU pourra entraîner l'interdiction d'accès au site.</p>
+            <h2 class="modal-text">5. Propriété intellectuelle</h2>
+            <p class="modal-text">Tous les contenus présents sur ce site sont protégés par les lois en vigueur sur la propriété intellectuelle. Toute reproduction, représentation, modification, publication, transmission totale ou partielle des contenus du site, sans l'accord préalable de Urban Solar Energy, est strictement interdite.</p>
+            <h2 class="modal-text">6. Données personnelles</h2>
+            <p class="modal-text">Urban Solar Energy peut être amené à collecter des données personnelles pour le bon fonctionnement du site et l'exécution des services proposés. Les utilisateurs disposent de droits d'accès, de rectification, et de suppression de leurs données. Pour exercer ces droits, veuillez nous contacter à l’adresse suivante : contact@urbansolarenergy.fr</p>
+            <h2 class="modal-text">7. Limitation de responsabilité</h2>
+            <p class="modal-text">Urban Solar Energy ne pourra être tenu responsable des dommages directs ou indirects résultant de l’utilisation du site ou de l’impossibilité d’y accéder.</p>
+            <h2 class="modal-text">8. Modification des CGU</h2>
+            <p class="modal-text">Urban Solar Energy se réserve le droit de modifier les présentes CGU à tout moment. Les utilisateurs sont invités à consulter régulièrement les CGU pour se tenir informés des éventuelles modifications.</p>
+            <h2 class="modal-text">9. Droit applicable et juridiction compétente</h2>
+            <p class="modal-text">Les présentes CGU sont régies par le droit français. En cas de litige, compétence est attribuée aux tribunaux compétents.</p>
+        </div>
+    </div>
+
+    <script>
+        // Ouvrir les modales
+        document.getElementById("openMentions").onclick = function() {
+            document.getElementById("modalMentions").style.display = "block";
+        }
+
+        document.getElementById("openCGU").onclick = function() {
+            document.getElementById("modalCGU").style.display = "block";
+        }
+
+        // Fermer les modales
+        document.getElementById("closeMentions").onclick = function() {
+            document.getElementById("modalMentions").style.display = "none";
+        }
+
+        document.getElementById("closeCGU").onclick = function() {
+            document.getElementById("modalCGU").style.display = "none";
+        }
+
+        // Fermer les modales en cliquant à l'extérieur
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("modalMentions")) {
+                document.getElementById("modalMentions").style.display = "none";
+            }
+            if (event.target == document.getElementById("modalCGU")) {
+                document.getElementById("modalCGU").style.display = "none";
+            }
+        }
+    </script>
+
+<!-- Nouveau script pour la soumission du formulaire avec log pour débogage -->
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Empêche le comportement par défaut
+
+    // Récupère les valeurs du formulaire
+    const formData = {
+      nom: document.getElementById("nom").value,
+      prenom: document.getElementById("prenom").value,
+      codepostal: document.getElementById("codepostal").value,
+      ville: document.getElementById("ville").value,
+      tel: document.getElementById("tel").value,
+      email: document.getElementById("email").value
+    };
+
+    // Log des données du formulaire pour vérifier
+    console.log("FormData:", formData);
+
+    // Envoie les données sous forme de requête POST au script Apps Script
+    fetch("https://script.google.com/macros/s/AKfycbwVSYGLqMKtUxhmjFwXbVInEWQlXF50EKYHz3RHtyJC-k_NLTeEWx-hrsIsdr84tt6Y/exec", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => response.text())
+    .then(data => {
+      console.log("Réponse du serveur:", data);
+      alert("Formulaire soumis avec succès !");
+    })
+    .catch(error => {
+      console.error("Erreur lors de la soumission :", error);
+      alert("Erreur lors de la soumission du formulaire.");
+    });
+  });
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
