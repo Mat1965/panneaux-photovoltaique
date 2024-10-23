@@ -1293,8 +1293,25 @@
   });
 </script>
 
-</body>
-</html>
+!-- Bandeau de consentement aux cookies -->
+<div id="cookie-banner" style="position: fixed; bottom: 0; width: 100%; background-color: #000; color: #fff; text-align: center; padding: 10px; display: none;">
+    <p>Ce site utilise des cookies pour améliorer votre expérience. En poursuivant votre navigation, vous acceptez l'utilisation de cookies.
+        <button id="accept-cookies" style="background-color: #f7931e; border: none; color: #fff; padding: 5px 10px; cursor: pointer;">Accepter</button>
+    </p>
+</div>
+
+<script>
+    // Vérifie si l'utilisateur a déjà accepté les cookies
+    if (!localStorage.getItem("cookiesAccepted")) {
+        document.getElementById("cookie-banner").style.display = "block";
+    }
+
+    // Gérer l'acceptation des cookies
+    document.getElementById("accept-cookies").onclick = function() {
+        localStorage.setItem("cookiesAccepted", true);
+        document.getElementById("cookie-banner").style.display = "none";
+    };
+</script>
 
 </body>
 </html>
