@@ -1274,21 +1274,24 @@
 
     // Envoie les données sous forme de requête POST au script Apps Script
     fetch("https://script.google.com/macros/s/AKfycbwVSYGLqMKtUxhmjFwXbVInEWQlXF50EKYHz3RHtyJC-k_NLTeEWx-hrsIsdr84tt6Y/exec", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  mode: "no-cors",  // Ajoute cette ligne pour éviter l'erreur CORS
-  body: JSON.stringify(formData)
-})
-.then(() => {
-  alert("Formulaire soumis avec succès !");
-})
-.catch(error => {
-  alert("Erreur lors de la soumission du formulaire.");
-});
-
-  </script>
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      mode: "no-cors",
+      body: JSON.stringify(formData)
+    })
+    .then(response => response.text())
+    .then(data => {
+      console.log("Réponse du serveur:", data);
+      alert("Formulaire soumis avec succès !");
+    })
+    .catch(error => {
+      console.error("Erreur lors de la soumission :", error);
+      alert("Erreur lors de la soumission du formulaire.");
+    });
+  });
+</script>
 
 </body>
 </html>
