@@ -4,15 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page - solaire energie direct</title>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11242044118"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-11242044118');
-</script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Styles existants des sections 1 à 7 */
@@ -1294,11 +1285,7 @@
     .then(response => response.text())
     .then(data => {
       console.log("Réponse du serveur:", data);
-      document.getElementById("contactForm").innerHTML = `
-    <h3>Merci pour votre demande !</h3>
-    <p>Nous avons bien reçu votre demande d’information. Un conseiller vous contactera prochainement pour discuter de votre projet solaire.</p>
-`;
-
+      alert("Formulaire soumis avec succès !");
     })
     .catch(error => {
       console.error("Erreur lors de la soumission :", error);
