@@ -1297,12 +1297,16 @@
       `;
       
       // Déclenchement du tag de conversion Google Ads
-     gtag('event', 'conversion', {
-    'send_to': 'AW-11242044118/hSjPCP7DqOIZENb1z_Ap', // Utilise l'ID et le libellé de conversion corrects
-    'value': 1.0,  // Valeur de la conversion (modifiable selon le contexte)
-    'currency': 'EUR' // Devise utilisée
-});
-
+      gtag('event', 'conversion', {
+        'send_to': 'AW-11242044118/GT-5M8SLFFN', // Remplace par ton ID de conversion spécifique
+        'value': 1.0,  // Valeur de la conversion (modifiable selon le contexte)
+        'currency': 'EUR' // Devise utilisée
+      });
+    })
+    .catch(error => {
+      console.error("Erreur lors de la soumission :", error);
+      alert("Erreur lors de la soumission du formulaire.");
+    });
   });
 </script>
 
