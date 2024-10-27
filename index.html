@@ -1291,17 +1291,21 @@
       body: JSON.stringify(formData)
     })
     .then(response => {
-      // Une fois les données soumises avec succès, déclenche l'événement de conversion Google Ads
-      gtag('event', 'conversion', {'send_to': 'AW-11242044118/hSjPCP7DqOlZENb1z_Ap'});
+  // Vérifie si la fonction gtag est disponible avant de déclencher l'événement de conversion
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {'send_to': 'AW-11242044118/hSjPCP7DqOlZENb1z_Ap'});
+  } else {
+    console.error("Le script Google Tag Manager n'est pas chargé correctement.");
+  }
 
+  console.log("Réponse du serveur:", response);
+  alert("Formulaire soumis avec succès !");
+})
+.catch(error => {
+  console.error("Erreur lors de la soumission :", error);
+  alert("Erreur lors de la soumission du formulaire.");
+});
 
-      console.log("Réponse du serveur:", response);
-      alert("Formulaire soumis avec succès !");
-    })
-    .catch(error => {
-      console.error("Erreur lors de la soumission :", error);
-      alert("Erreur lors de la soumission du formulaire.");
-    });
   });
 </script>
 
