@@ -1285,7 +1285,11 @@
     .then(response => response.text())
     .then(data => {
       console.log("Réponse du serveur:", data);
-      alert("Formulaire soumis avec succès !");
+      document.getElementById("contactForm").innerHTML = `
+    <h3>Merci pour votre demande !</h3>
+    <p>Nous avons bien reçu votre demande d’information. Un conseiller vous contactera prochainement pour discuter de votre projet solaire.</p>
+`;
+
     })
     .catch(error => {
       console.error("Erreur lors de la soumission :", error);
