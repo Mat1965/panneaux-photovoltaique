@@ -783,6 +783,46 @@
                     <input type="submit" value="Recevoir mon étude gratuite">
                 </div>
                 <p>Nous nous engageons à protéger vos coordonnées. Elles ne seront jamais partagées ou utilisées à des fins commerciales sans votre consentement.</p>
+                <script>
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Empêche le rechargement de la page
+
+    // Récupère les valeurs du formulaire
+    const formData = {
+      nom: document.getElementById("nom").value,
+      prenom: document.getElementById("prenom").value,
+      codepostal: document.getElementById("codepostal").value,
+      ville: document.getElementById("ville").value,
+      tel: document.getElementById("tel").value,
+      email: document.getElementById("email").value
+    };
+
+    // Envoie les données au script Apps Script
+    fetch("https://script.google.com/macros/s/AKfycbwVSYGLqMKtUxhmjFwXbVInEWQlXF50EKYHz3RHtyJC-k_NLTeEWx-hrsIsdr84tt6Y/exec", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      mode: "no-cors",
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      // Enregistre la conversion Google Ads
+      gtag('event', 'conversion', {'send_to': 'AW-11242044118/hSjPCP7DqOlZENb1z_Ap'});
+
+      // Message de confirmation pour l'utilisateur
+      document.getElementById("contactForm").innerHTML = `
+        <h3>Merci pour votre demande !</h3>
+        <p>Nous avons bien reçu votre demande d’information. Un conseiller vous contactera prochainement pour discuter de votre projet solaire.</p>
+      `;
+    })
+    .catch(error => {
+      console.error("Erreur lors de la soumission :", error);
+      alert("Erreur lors de la soumission du formulaire.");
+    });
+  });
+</script>
+
             </form>
         </div>
     </section>
