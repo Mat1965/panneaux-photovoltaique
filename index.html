@@ -784,14 +784,14 @@
                 </div>
                 <p>Nous nous engageons à protéger vos coordonnées. Elles ne seront jamais partagées ou utilisées à des fins commerciales sans votre consentement.</p>
                 <script>
-  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Empêche le rechargement de la page
 
-    // Désactiver le bouton pour éviter les doubles clics
+    // Désactivez le bouton pour éviter les doubles clics
     const submitButton = document.getElementById("submitButton");
     submitButton.disabled = true;
 
-    // Récupère les valeurs du formulaire
+    // Récupérez les valeurs du formulaire
     const formData = {
         nom: document.getElementById("nom").value,
         prenom: document.getElementById("prenom").value,
@@ -822,6 +822,7 @@
         submitButton.disabled = false;
     });
 });
+
 
 </script>
 
