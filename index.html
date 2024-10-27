@@ -1262,7 +1262,10 @@
                 document.getElementById("modalCGU").style.display = "none";
             }
         }
-   <script>
+    </script>
+
+<!-- Nouveau script pour la soumission du formulaire avec log pour débogage -->
+<script>
   document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Empêche le comportement par défaut
 
@@ -1292,20 +1295,17 @@
     .then(data => {
       console.log("Réponse du serveur:", data);
       document.getElementById("contactForm").innerHTML = `
-        <h3>Merci pour votre demande !</h3>
-        <p>Nous avons bien reçu votre demande d’information. Un conseiller vous contactera prochainement pour discuter de votre projet solaire.</p>
-      `;
-      
-      // Déclenchement du tag de conversion Google Ads
-     gtag('event', 'conversion', {
-    'send_to': 'AW-11242044118/hSjPCP7DqOIZENb1z_Ap', // Utilise l'ID et le libellé de conversion corrects
-    'value': 1.0,  // Valeur de la conversion (modifiable selon le contexte)
-    'currency': 'EUR' // Devise utilisée
-});
+    <h3>Merci pour votre demande !</h3>
+    <p>Nous avons bien reçu votre demande d’information. Un conseiller vous contactera prochainement pour discuter de votre projet solaire.</p>
+`;
 
+    })
+    .catch(error => {
+      console.error("Erreur lors de la soumission :", error);
+      alert("Erreur lors de la soumission du formulaire.");
+    });
   });
 </script>
-
 
 !-- Bandeau de consentement aux cookies -->
 <div id="cookie-banner" style="position: fixed; bottom: 0; width: 100%; background-color: #000; color: #fff; text-align: center; padding: 10px; display: none;">
