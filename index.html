@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page - solaire energie direct</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11242044118"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-11242044118');
+</script>
+
     <style>
         /* Styles existants des sections 1 à 7 */
         /* Section 1: Haut de page avec le formulaire */
@@ -1282,9 +1290,11 @@
       mode: "no-cors",
       body: JSON.stringify(formData)
     })
-    .then(response => response.text())
-    .then(data => {
-      console.log("Réponse du serveur:", data);
+    .then(response => {
+      // Une fois les données soumises avec succès, déclenche l'événement de conversion Google Ads
+      gtag('event', 'conversion', {'send_to': 'AW-11242044118/GT-5M8SLFFN'});
+
+      console.log("Réponse du serveur:", response);
       alert("Formulaire soumis avec succès !");
     })
     .catch(error => {
@@ -1293,6 +1303,7 @@
     });
   });
 </script>
+
 
 !-- Bandeau de consentement aux cookies -->
 <div id="cookie-banner" style="position: fixed; bottom: 0; width: 100%; background-color: #000; color: #fff; text-align: center; padding: 10px; display: none;">
