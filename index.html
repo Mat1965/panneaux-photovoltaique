@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page - solaire energie direct</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11242044118"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-11242044118');
-</script>
-
     <style>
         /* Styles existants des sections 1 à 7 */
         /* Section 1: Haut de page avec le formulaire */
@@ -1290,25 +1282,17 @@
       mode: "no-cors",
       body: JSON.stringify(formData)
     })
-    .then(response => {
-  // Vérifie si la fonction gtag est disponible avant de déclencher l'événement de conversion
-  if (typeof gtag === 'function') {
-    gtag('event', 'conversion', {'send_to': 'AW-11242044118/hSjPCP7DqOlZENb1z_Ap'});
-  } else {
-    console.error("Le script Google Tag Manager n'est pas chargé correctement.");
-  }
-
-  console.log("Réponse du serveur:", response);
-  alert("Formulaire soumis avec succès !");
-})
-.catch(error => {
-  console.error("Erreur lors de la soumission :", error);
-  alert("Erreur lors de la soumission du formulaire.");
-});
-
+    .then(response => response.text())
+    .then(data => {
+      console.log("Réponse du serveur:", data);
+      alert("Formulaire soumis avec succès !");
+    })
+    .catch(error => {
+      console.error("Erreur lors de la soumission :", error);
+      alert("Erreur lors de la soumission du formulaire.");
+    });
   });
 </script>
-
 
 !-- Bandeau de consentement aux cookies -->
 <div id="cookie-banner" style="position: fixed; bottom: 0; width: 100%; background-color: #000; color: #fff; text-align: center; padding: 10px; display: none;">
