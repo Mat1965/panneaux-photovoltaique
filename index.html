@@ -1274,13 +1274,10 @@
       ville: document.getElementById("ville").value,
       tel: document.getElementById("tel").value,
       email: document.getElementById("email").value
-      
     };
-      formData.sourcepv = "PV";
-      console.log("Vérification sourcepv :", formData.sourcepv);
 
-
- 
+    // Log des données du formulaire pour vérifier
+    console.log("FormData:", formData);
 
     // Envoie les données sous forme de requête POST au script Apps Script
     fetch("https://script.google.com/macros/s/AKfycbwVSYGLqMKtUxhmjFwXbVInEWQlXF50EKYHz3RHtyJC-k_NLTeEWx-hrsIsdr84tt6Y/exec", {
