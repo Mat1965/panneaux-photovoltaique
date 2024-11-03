@@ -1279,7 +1279,7 @@
       formData.sourcepv = "PV";
  
     // Log des données du formulaire pour vérifier
-    console.log("FormData:", formData);
+    formData.sourcepv = "PV"; // Forcer la valeur PV
 
     // Envoie les données sous forme de requête POST au script Apps Script
     fetch("https://script.google.com/macros/s/AKfycbwVSYGLqMKtUxhmjFwXbVInEWQlXF50EKYHz3RHtyJC-k_NLTeEWx-hrsIsdr84tt6Y/exec", {
