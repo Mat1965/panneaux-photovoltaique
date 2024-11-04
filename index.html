@@ -1264,40 +1264,33 @@
 <!-- Nouveau script pour la soumission du formulaire avec log pour débogage -->
 <script>
   document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Empêche le comportement par défaut
+  event.preventDefault(); // Empêche le comportement par défaut
 
-    // Récupère les valeurs du formulaire
-    const formData = {
-      nom: document.getElementById("nom").value,
-      prenom: document.getElementById("prenom").value,
-      codepostal: document.getElementById("codepostal").value,
-      ville: document.getElementById("ville").value,
-      tel: document.getElementById("tel").value,
-      email: document.getElementById("email").value
-    };
+  // Utilisation de FormData pour recueillir les données du formulaire
+  const formData = new FormData();
+  formData.append("nom", document.getElementById("nom").value);
+  formData.append("prenom", document.getElementById("prenom").value);
+  formData.append("codepostal", document.getElementById("codepostal").value);
+  formData.append("ville", document.getElementById("ville").value);
+  formData.append("tel", document.getElementById("tel").value);
+  formData.append("email", document.getElementById("email").value);
+  formData.append("sourcepv", "PV"); // Ajout direct de sourcepv
 
-    // Log des données du formulaire pour vérifier
-    console.log("FormData:", formData);
-
-    // Envoie les données sous forme de requête POST au script Apps Script
-    fetch("https://script.google.com/macros/s/AKfycbwVSYGLqMKtUxhmjFwXbVInEWQlXF50EKYHz3RHtyJC-k_NLTeEWx-hrsIsdr84tt6Y/exec", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      mode: "no-cors",
-      body: JSON.stringify(formData)
-    })
-    .then(response => response.text())
-    .then(data => {
-      console.log("Réponse du serveur:", data);
-      alert("Formulaire soumis avec succès !");
-    })
-    .catch(error => {
-      console.error("Erreur lors de la soumission :", error);
-      alert("Erreur lors de la soumission du formulaire.");
-    });
+  // Envoie les données sous forme de requête POST au script Apps Script
+  fetch("https://script.google.com/macros/s/AKfycbwVSYGLqMKtUxhmjFwXbVInEWQlXF50EKYHz3RHtyJC-k_NLTeEWx-hrsIsdr84tt6Y/exec", {
+    method: "POST",
+    body: formData,
+    mode: "no-cors"
+  })
+  .then(() => {
+    alert("Formulaire soumis avec succès !");
+  })
+  .catch(error => {
+    console.error("Erreur lors de la soumission :", error);
+    alert("Erreur lors de la soumission du formulaire.");
   });
+});
+
 </script>
 
 </body>
